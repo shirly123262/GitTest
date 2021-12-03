@@ -18,19 +18,6 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - name: Install
-      run: npm build
-
-  test:
-    name: Running Units Tests
-    runs-on: ubuntu-latest
-
-    steps:
-    - uses: actions/checkout@v1
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
-    - name: Install
-      run: npm install
-    - name: Test
-      run: npm test
+      run: 
+        npm install
+        echo "${node-version}"
